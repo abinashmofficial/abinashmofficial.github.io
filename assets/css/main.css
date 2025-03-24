@@ -638,7 +638,6 @@ section,
 .hero {
   width: 100%;
   position: relative;
-  padding: 120px 0 0 0;
 }
 
 .hero .container {
@@ -709,18 +708,21 @@ section,
     font-size: 36px;
   }
 
-  .hero .btn-get-started,
-  .hero .btn-watch-video {
+  .owrworks .btn-get-started,
+  .owrworks .btn-watch-video {
     font-size: 14px;
   }
 }
 
-.hero .icon-boxes {
+.owrworks .icon-boxes {
   padding-bottom: 60px;
   z-index: 4;
 }
 
-.hero .icon-box {
+.owrworks {
+  background-color: lightgray !important;
+}
+.owrworks .icon-box {
   background: var(--surface-color);
   padding: 60px 30px;
   position: relative;
@@ -734,18 +736,18 @@ section,
   text-align: center;
 }
 
-.hero .icon-box .title {
+.owrworks .icon-box .title {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
 }
 
-.hero .icon-box .title a {
+.owrworks .icon-box .title a {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   transition: 0.3s;
 }
 
-.hero .icon-box .icon {
+.owrworks .icon-box .icon {
   margin-bottom: 20px;
   padding-top: 10px;
   display: inline-block;
@@ -755,12 +757,12 @@ section,
   color: var(--accent-color);
 }
 
-.hero .icon-box:hover {
+.owrworks .icon-box:hover {
   background-color: var(--accent-color);
 }
 
-.hero .icon-box:hover .title a,
-.hero .icon-box:hover .icon {
+.owrworks .icon-box:hover .title a,
+.owrworks .icon-box:hover .icon {
   color: var(--contrast-color);
 }
 
@@ -1331,4 +1333,41 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+.progress-circle circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+.progress-circle .bg {
+  stroke: #e0e0e0;
+}
+.progress-circle .progress {
+  stroke: var(--accent-color);
+  stroke-dasharray: 314;
+  stroke-dashoffset: calc(314 - (314 * 70) / 100); /* 70% progress */
+  transition: stroke-dashoffset 0.5s ease;
+}
+.progress-circle img {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  z-index: 2;
+  border-radius: 50%;
 }
